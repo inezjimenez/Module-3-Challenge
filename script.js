@@ -5,7 +5,7 @@ var generateBtn = document.querySelector("#generate");
 
 var passwordCriteria={
 //Created arrays of all possible character choices
-length=0;
+passwordLength=0;
 numbers = ['0','1','2','3','4','5','6','7','8','9'];
 special= ['!','@','#','$','%','&','*','+','=','?','~'];
 lowerCase= ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',];
@@ -29,11 +29,18 @@ function writePassword(){
 
 function generatePassword(){
   var result=""
-  var length=0;
+  var passwordLength=0;
   var numbers;
   var special;
   var loerCase;
   var upperCase;
+
+  while(passwordLength<8||passwordLength>=8){
+    passwordLength=prompt("How many characters do you want your password to be? Passworod must be between 1 and 8 characters.")
+
+    if( passwordLength>8){
+      alert("Password must be between 1 and 8 characters.")
+  }
 
   return responses;
 }
