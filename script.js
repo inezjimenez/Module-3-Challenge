@@ -35,15 +35,7 @@ console.log(upperCase);
 //       if (lowerCase===false && upperCase===false && numbers===false && special===false){
 //         alert("You must select at least one criteria of lowercase,uppercase,numbers or special characters.")
 //         showPrompts();
-//       }
-//       else{
-
-//       }
-//     }
-//   }
-
-//   return responses;
-// }
+//       
 
 function usersChoice(){
   // var passwordOptions=questions();
@@ -57,6 +49,22 @@ function usersChoice(){
   var numbers= confirm(
     "Do you want numbers in your password?"
   )
+  console.log(numbers)
+
+  var special=confirm(
+    prompt("Do you want special characters in your password?")
+  )
+  console.log(special)
+
+  var lowerCase=confirm(
+    prompt("Do you want lowercase letters in your password?")
+  )
+  console.log(lowerCase)
+
+  var upperCase=confirm(
+    prompt("Do you want uppercase letters in your password?")
+  )
+  console.log(upperCase)
 
   var passwordChoices = {
     passLength: passwordLength,
@@ -87,25 +95,32 @@ function generatePassword(){
 
   if(usersPassword.usersLowerCase){
     allCharacters=allCharacters.concat(lowerCase)
-    console.log(lowerCase)
+    console.log(allCharacters)
   }
 
   if(usersPassword.usersUperCase){
     allCharacters=allCharacters.concat(upperCase)
-    console.log(upperCase)
+    console.log(allCharacters)
   }
-
-  if(usersPassword.)
-
-
-
-
-
-
-
 
   for (var i=0;i<usersPassword.passLength;i++){
     finalPassword+= allCharacters[Math.floor(Math.random() * allCharacters.length)];
+    console.log(finalPassword)
+  }
+  for (var i=0;i<usersPassword.numChoice;i++){
+    finalPassword+= allCharacters[Math.floor(Math.random()*allCharacters.numbers)]
+    console.log(finalPassword)
+  }
+  for (var i=0;i<usersPassword.usersSpecial;i++){
+    finalPassword+=allCharacters[Math.floor(Math.random()*allCharacters.special)]
+    console.log(finalPassword)
+  }
+  for (var i=0;i<usersPassword.usersUperCase;i++){
+    finalPassword+=allCharacters[Math.floor(Math.random()*allCharacters.upperCase)]
+    console.log(finalPassword)
+  }
+  for (var i=0;i<usersPassword.usersLowerCase;i++){
+    finalPassword+=allCharacters[Math.floor(Math.random()*allCharacters.lowerCase)]
     console.log(finalPassword)
   }
 
